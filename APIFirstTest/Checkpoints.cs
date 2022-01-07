@@ -137,8 +137,8 @@ namespace Script
             IVTDSetter actualValueSetter3 = new VTDCheckpointSetter(XmlTypeCode.Float);
             BindDirection actualBindDirection3 = new BindDirection(_flow.StServiceCallActivity5, actualValueGetter3, actualValueSetter3);
             CpValObj valueActualObject3 = new CpValObj(actualBindDirection3, XmlTypeCode.Float, false);
-            CpValObj valueExpectedObject3 = new CpValObj("500", XmlTypeCode.Float);
-            ValueCPRule cpRule3 = new ValueCPRule(valueActualObject3, valueExpectedObject3, PrimitiveTypeCP.SmallerThan, "<", false);
+            CpValObj valueExpectedObject3 = new CpValObj("300", XmlTypeCode.Float);
+            ValueCPRule cpRule3 = new ValueCPRule(valueActualObject3, valueExpectedObject3, PrimitiveTypeCP.LargerThan, ">", false);
             activity.AddCheckpointRule(cpRule3);
 
         }
