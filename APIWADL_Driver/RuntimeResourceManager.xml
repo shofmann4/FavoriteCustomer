@@ -1,0 +1,4 @@
+<RuntimeResourceManager>
+<RuntimeResource><Key>{Step.GeneralProperties.CallSTTest4.ScriptPath}</Key><Path>C:\GIT\UFTStudy\APIWADL_GetFlights</Path><Value>..\APIWADL_GetFlights</Value><AddinId></AddinId></RuntimeResource>
+<RuntimeResource><Key>{Step.GeneralProperties.CallSTTest5.ScriptPath}</Key><Path>C:\GIT\UFTStudy\APIWADL_BookFlight</Path><Value>..\APIWADL_BookFlight</Value><AddinId></AddinId></RuntimeResource>
+</RuntimeResourceManager>
