@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>ec732a92-58d1-4860-9010-71eb1450f88d</ID>
+  <Name>Flight Service</Name>
+  <Type>REST</Type>
+  <Version>1</Version>
+  <CreationDate>2022-01-07T21:13:04.7310961+00:00</CreationDate>
+  <UpdateDate>2022-01-07T21:13:04.7310961+00:00</UpdateDate>
+  <LoaderID>SignatureResourceHandler</LoaderID>
+  <MetaDataSignatureFile>a29b314d-d4e4-4cb9-a3a2-4590d68204f4.xml</MetaDataSignatureFile>
+  <TestResourceId>a29b314d-d4e4-4cb9-a3a2-4590d68204f4</TestResourceId>
+  <RepositoryType>TestRepository</RepositoryType>
+  <SignatureCodonId>HP.ST.RestDesignTime.RestServicesV2</SignatureCodonId>
+  <SignatureAddinVersion>2021.0.0.131</SignatureAddinVersion>
+  <Properties>
+    <Item>
+      <Key>
+        <string>RepositoryPath</string>
+      </Key>
+      <Value>
+        <string>C:\GIT\UFTStudy\APIWADL_BookFlight\EmbeddedResources</string>
+      </Value>
+    </Item>
+    <Item>
+      <Key>
+        <string>ResourceOrigin</string>
+      </Key>
+      <Value>
+        <string>C:\GIT\UFTStudy\APIWADL_BookFlight\EmbeddedResources\Flight Service</string>
+      </Value>
+    </Item>
+    <Item>
+      <Key>
+        <string>PrototypeDbVersion</string>
+      </Key>
+      <Value>
+        <string>2021.0.0.131</string>
+      </Value>
+    </Item>
+  </Properties>
+</ResourceManifest>
