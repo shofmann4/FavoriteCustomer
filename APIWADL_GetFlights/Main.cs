@@ -46,7 +46,11 @@
     	int reportLevelInTree;
         HP.ST.Fwk.ReportCreator.QTPEngine.QTPEngineReportCreator reportCreator;
     	
-    	
+    	public BindDirection bind_dir28 = null;
+        public BindDirection bind_dir29 = null;
+        public BindDirection bind_dir30 = null;
+        public BindDirection bind_dir31 = null;
+        
         public IEnumerable<FeaturesGroup> LicensedFeatures
         {
         
@@ -92,7 +96,8 @@
         	_flow.StartActivity1 = new HP.ST.Ext.BasicActivities.StartActivity(_context,"StartActivity1");
             _flow.Loop2 = new HP.ST.Fwk.RunTimeFWK.CompositeActivities.Loop<Loop2Input>(_context,"Loop2",LoopType.For);
             _flow.EndActivity3 = new HP.ST.Ext.BasicActivities.EndActivity(_context,"EndActivity3");
-            _flow.Sequence4 = new HP.ST.Fwk.RunTimeFWK.CompositeActivities.Sequence(_context,"Sequence4");
+            _flow.Sequence5 = new HP.ST.Fwk.RunTimeFWK.CompositeActivities.Sequence(_context,"Sequence5");
+            _flow.RESTActivityV24 = new HP.ST.Ext.RestActivity.RESTActivityV2<RESTActivityV24Input,RESTActivityV24Output>(_context,"RESTActivityV24");
             _flow.StartActivity1.Comment = @"";
             _flow.StartActivity1.IconPath = @"AddIns\ServiceTest\BasicActivities\toolbox_code_activity.png";
             _flow.StartActivity1.Name = @"Start";
@@ -128,15 +133,130 @@
             _flow.Loop2.Comment = @"";
             _flow.Loop2.IconPath = @"AddIns\ServiceTest\BasicActivities\toolbox_loop.png";
             _flow.Loop2.Name = @"Test Flow";
-            _flow.Loop2.Activities.Add (_flow.Sequence4);
+            _flow.Loop2.Activities.Add (_flow.Sequence5);
             this.Activities.Add (_flow.Loop2);
+            XmlDocument EndActivity3_ExecutionOutputParameters_Document = new XmlDocument();
+            EndActivity3_ExecutionOutputParameters_Document.PreserveWhitespace = true;
+            EndActivity3_ExecutionOutputParameters_Document.LoadXml(
+@"<Arguments><FlightNo>{Step.ResponseXmlBody.RESTActivityV24.Flight[1].FlightNumber}</FlightNo></Arguments>");
+            _flow.EndActivity3.ExecutionOutputParameters = EndActivity3_ExecutionOutputParameters_Document;
             _flow.EndActivity3.Comment = @"";
             _flow.EndActivity3.IconPath = @"AddIns\ServiceTest\BasicActivities\toolbox_code_activity.png";
             _flow.EndActivity3.Name = @"End";
+            VTDPropertyInfoBase pi55 = new VTDPropertyInfoBase("XMLResponse","/*[local-name(.)='ArrayOfFlight'][1]/*[local-name(.)='Flight'][{Array0}]/*[local-name(.)='FlightNumber'][1]");
+            VTDBaseGetter binding_getter28 = new VTDXPathGetter(pi55,XmlTypeCode.UnsignedShort);
+            binding_getter28 = new XPathGetterDecorator(binding_getter28,"{Array0}",1);
+            VTDPropertyInfoBase pi56 = new VTDPropertyInfoBase("ExecutionOutputParameters","/*[local-name(.)='Arguments'][1]/*[local-name(.)='FlightNo'][1]");
+            VTDBaseSetter binding_setter28 = new VTDXPathSetter(pi56,XmlTypeCode.Int);
+            bind_dir28 = new BindDirection(_flow.RESTActivityV24,binding_getter28,binding_setter28,BindTargetType.ToInProperty);
+            _flow.EndActivity3.InDirections.Add(bind_dir28);
             this.Activities.Add (_flow.EndActivity3);
-            _flow.Sequence4.Comment = @"";
-            _flow.Sequence4.IconPath = @"";
-            _flow.Sequence4.Name = @"Sequence4";
+            _flow.Sequence5.Comment = @"";
+            _flow.Sequence5.IconPath = @"";
+            _flow.Sequence5.Name = @"Sequence5";
+            _flow.Sequence5.Activities.Add (_flow.RESTActivityV24);
+            _flow.RESTActivityV24.TextBody = @"";
+            _flow.RESTActivityV24.TextXmlBody = @"";
+            _flow.RESTActivityV24.FileBody = @"";
+            _flow.RESTActivityV24.PostBody = @"";
+            _flow.RESTActivityV24.Url = @"http://localhost:8000/Flights_REST/Flights?DepartureCity={Step.RESTInputProperties.RESTActivityV24.DepartureCity}&ArrivalCity={Step.RESTInputProperties.RESTActivityV24.ArrivalCity}&Date={Step.RESTInputProperties.RESTActivityV24.Date}";
+            _flow.RESTActivityV24.HttpMethod = @"GET";
+            _flow.RESTActivityV24.HttpVersion = @"1.1";
+            _flow.RESTActivityV24.Input.DepartureCity = @"Portland";
+            _flow.RESTActivityV24.Input.ArrivalCity = @"Sydney";
+            _flow.RESTActivityV24.Input.Date =  new DateTime(2023,1,12,0,0,0,0);
+            _flow.RESTActivityV24.Comment = @"";
+            _flow.RESTActivityV24.IconPath = @"AddIns\ServiceTest\REST\ictb_REST_Method_16.png";
+            _flow.RESTActivityV24.RequestBodyType = @"Text";
+            _flow.RESTActivityV24.ResponseType = @"Xml";
+            _flow.RESTActivityV24.Name = @"GetFlights4";
+            _flow.RESTActivityV24.Proxy.Server = @"";
+            _flow.RESTActivityV24.Proxy.Username = @"";
+            _flow.RESTActivityV24.Proxy.Password = @"";
+            _flow.RESTActivityV24.Authentication.Username = @"";
+            _flow.RESTActivityV24.Authentication.Password = @"";
+            _flow.RESTActivityV24.Authentication.PreemptiveAuthentication = false;
+            _flow.RESTActivityV24.ConnectionType = @"Keep-Alive";
+            _flow.RESTActivityV24.Timeout = (int)100000;
+            _flow.RESTActivityV24.ClientCertificate.Password = @"";
+            _flow.RESTActivityV24.ClientCertificate.FileSystem.Path = @"";
+            _flow.RESTActivityV24.UseClientCertificate = false;
+            _flow.RESTActivityV24.MaximumAutomaticRedirections = (int)3;
+            _flow.RESTActivityV24.AllowRedirections = true;
+            _flow.RESTActivityV24.ReuseCookies = false;
+            _flow.RESTActivityV24.ExpectServerError = false;
+            _flow.RESTActivityV24.HanaRequest = false;
+            XmlDocument RESTActivityV24_XMLBody_Document = new XmlDocument();
+            RESTActivityV24_XMLBody_Document.PreserveWhitespace = true;
+            RESTActivityV24_XMLBody_Document.LoadXml(
+@"<F6DA54ED-92F5-4c5c-9795-170905F25080 />");
+            _flow.RESTActivityV24.XMLBody = RESTActivityV24_XMLBody_Document;
+            XmlDocument RESTActivityV24_RequestMultipartInfoXml_Document = new XmlDocument();
+            RESTActivityV24_RequestMultipartInfoXml_Document.PreserveWhitespace = true;
+            RESTActivityV24_RequestMultipartInfoXml_Document.LoadXml(
+@"<RequestMultipartInfo><Type>Related</Type></RequestMultipartInfo>");
+            _flow.RESTActivityV24.RequestMultipartInfoXml = RESTActivityV24_RequestMultipartInfoXml_Document;
+            _flow.RESTActivityV24.Multipart=false;
+            _flow.RESTActivityV24.Input.DepartureCity = @"Portland";
+            _flow.RESTActivityV24.Input.ArrivalCity = @"Sydney";
+            _flow.RESTActivityV24.Input.Date =  new DateTime(2023,1,12,0,0,0,0);
+            _flow.RESTActivityV24.Input.DepartureCity = @"Portland";
+            _flow.RESTActivityV24.Input.ArrivalCity = @"Sydney";
+            _flow.RESTActivityV24.Input.Date =  new DateTime(2023,1,12,0,0,0,0);
+            VTDPropertyInfoBase pi57 = new VTDPropertyInfoBase("Input.DepartureCity");
+            VTDBaseGetter binding_getter29 = new VTDObjectGetter(pi57);
+            VTDPropertyInfoBase pi58 = new VTDPropertyInfoBase("Url");
+            VTDBaseSetter binding_setter29 = new VTDObjectSetter(pi58);
+            binding_setter29 = new StringFormaterDecorator(binding_setter29,"{Step.RESTInputProperties.RESTActivityV24.DepartureCity}");
+            bind_dir29 = new BindDirection(_flow.RESTActivityV24,binding_getter29,binding_setter29,BindTargetType.ToInProperty);
+            _flow.RESTActivityV24.InDirections.Add(bind_dir29);
+            VTDPropertyInfoBase pi59 = new VTDPropertyInfoBase("Input.ArrivalCity");
+            VTDBaseGetter binding_getter30 = new VTDObjectGetter(pi59);
+            VTDPropertyInfoBase pi60 = new VTDPropertyInfoBase("Url");
+            VTDBaseSetter binding_setter30 = new VTDObjectSetter(pi60);
+            binding_setter30 = new StringFormaterDecorator(binding_setter30,"{Step.RESTInputProperties.RESTActivityV24.ArrivalCity}");
+            bind_dir30 = new BindDirection(_flow.RESTActivityV24,binding_getter30,binding_setter30,BindTargetType.ToInProperty);
+            _flow.RESTActivityV24.InDirections.Add(bind_dir30);
+            VTDPropertyInfoBase pi61 = new VTDPropertyInfoBase("Input.Date");
+            VTDBaseGetter binding_getter31 = new VTDObjectGetter(pi61);
+            VTDPropertyInfoBase pi62 = new VTDPropertyInfoBase("Url");
+            VTDBaseSetter binding_setter31 = new VTDObjectSetter(pi62);
+            binding_setter31 = new StringFormaterDecorator(binding_setter31,"{Step.RESTInputProperties.RESTActivityV24.Date}");
+            bind_dir31 = new BindDirection(_flow.RESTActivityV24,binding_getter31,binding_setter31,BindTargetType.ToInProperty);
+            _flow.RESTActivityV24.InDirections.Add(bind_dir31);
+            XmlDocument RESTActivityV24_ExpectedResponseXmlBody_Document = new XmlDocument();
+            RESTActivityV24_ExpectedResponseXmlBody_Document.PreserveWhitespace = true;
+            RESTActivityV24_ExpectedResponseXmlBody_Document.LoadXml(
+@"<ArrayOfFlight xmlns=""HP.SOAQ.SampleApp"" xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"">  <Flight>
+    <Airline>AA</Airline>
+    <ArrivalCity>Sydney</ArrivalCity>
+    <ArrivalTime>04:23 PM</ArrivalTime>
+    <DepartureCity>Portland</DepartureCity>
+    <DepartureTime>09:12 AM</DepartureTime>
+    <FlightNumber>20226</FlightNumber>
+    <Price>112.2</Price>
+  </Flight>
+  <Flight>
+    <Airline>AA</Airline>
+    <ArrivalCity>Sydney</ArrivalCity>
+    <ArrivalTime>01:23 PM</ArrivalTime>
+    <DepartureCity>Portland</DepartureCity>
+    <DepartureTime>06:12 AM</DepartureTime>
+    <FlightNumber>20230</FlightNumber>
+    <Price>112.2</Price>
+  </Flight>
+</ArrayOfFlight>");
+            _flow.RESTActivityV24.ExpectedResponseXmlBody = RESTActivityV24_ExpectedResponseXmlBody_Document;
+            XmlDocument RESTActivityV24_ExpectedResponseJsonBody_Document = new XmlDocument();
+            RESTActivityV24_ExpectedResponseJsonBody_Document.PreserveWhitespace = true;
+            RESTActivityV24_ExpectedResponseJsonBody_Document.LoadXml(
+@"<F6DA54ED-92F5-4c5c-9795-170905F25080 />");
+            _flow.RESTActivityV24.ExpectedResponseJsonBody = RESTActivityV24_ExpectedResponseJsonBody_Document;
+            XmlDocument RESTActivityV24_ExpectedOutputProperties_Document = new XmlDocument();
+            RESTActivityV24_ExpectedOutputProperties_Document.PreserveWhitespace = true;
+            RESTActivityV24_ExpectedOutputProperties_Document.LoadXml(
+@"<Arguments><ResponseHttpVersion></ResponseHttpVersion><StatusCode></StatusCode><StatusDescription></StatusDescription><ResponseBody></ResponseBody><ResponseBodyAsBase64></ResponseBodyAsBase64></Arguments>");
+            _flow.RESTActivityV24.ExpectedOutputProperties = RESTActivityV24_ExpectedOutputProperties_Document;
             
         }
         

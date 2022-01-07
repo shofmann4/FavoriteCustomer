@@ -14,7 +14,10 @@
         $(ST_INSTALL_PATH)\addins\ServiceTest\BaseCheckPoints\;
         $(ST_INSTALL_PATH)\AddIns\ServiceTest\BasicActivities\;
         $(ST_INSTALL_PATH)\AddIns\ServiceTest\BaseDataProviders\;
-      </ReferencePath>
+      
+$(ST_INSTALL_PATH)\AddIns\ServiceTest\REST;
+$(ST_INSTALL_PATH)\AddIns\ServiceTest\WSImportTechnology;
+$(ST_INSTALL_PATH)\AddIns\ServiceTest\HTTPActivity;</ReferencePath>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <OutputPath>bin</OutputPath>
     <RegisterForComInterop>False</RegisterForComInterop>
@@ -59,8 +62,20 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="HP.ST.Ext.CommunicationChannels">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="HP.ST.Ext.CustomDataProviders.dll">
       <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HP.ST.Ext.HTTPActivity">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HP.ST.Ext.RESTActivity">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HP.ST.Ext.WebServicesTechnologyRT">
       <Private>False</Private>
     </Reference>
     <Reference Include="HP.ST.Fwk.JVMLoader.dll">

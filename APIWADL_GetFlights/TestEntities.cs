@@ -21,7 +21,8 @@ using System;
     public HP.ST.Ext.BasicActivities.StartActivity StartActivity1 = null;
     public HP.ST.Fwk.RunTimeFWK.CompositeActivities.Loop<Loop2Input> Loop2 = null;
     public HP.ST.Ext.BasicActivities.EndActivity EndActivity3 = null;
-    public HP.ST.Fwk.RunTimeFWK.CompositeActivities.Sequence Sequence4 = null;
+    public HP.ST.Fwk.RunTimeFWK.CompositeActivities.Sequence Sequence5 = null;
+    public HP.ST.Ext.RestActivity.RESTActivityV2<RESTActivityV24Input,RESTActivityV24Output> RESTActivityV24 = null;
     
     }
     

@@ -32,13 +32,13 @@
     <VarName>TestDir</VarName>
     <IsSystem>true</IsSystem>
     <Description />
-    <SystemProfile />
+    <SystemProfile>C:\GIT\UFTStudy\APIWADL_GetFlights</SystemProfile>
   </Profiles>
   <Profiles>
     <VarName>TestName</VarName>
     <IsSystem>true</IsSystem>
     <Description />
-    <SystemProfile />
+    <SystemProfile>APIWADL_GetFlights</SystemProfile>
   </Profiles>
   <Profiles>
     <VarName>LocalHostName</VarName>
@@ -86,7 +86,7 @@
     <VarName>CurrentDate</VarName>
     <IsSystem>true</IsSystem>
     <Description />
-    <SystemProfile>1/7/2022 8:54:16 PM</SystemProfile>
+    <SystemProfile>1/7/2022 9:43:46 PM</SystemProfile>
   </Profiles>
   <Profiles>
     <VarName>QcUrl</VarName>
