@@ -46,8 +46,8 @@
     	int reportLevelInTree;
         HP.ST.Fwk.ReportCreator.QTPEngine.QTPEngineReportCreator reportCreator;
     	
-    	public BindDirection bind_dir32 = null;
-        public BindDirection bind_dir33 = null;
+    	public BindDirection bind_dir38 = null;
+        public BindDirection bind_dir39 = null;
         
         public IEnumerable<FeaturesGroup> LicensedFeatures
         {
@@ -142,13 +142,12 @@
             _flow.EndActivity3.Comment = @"";
             _flow.EndActivity3.IconPath = @"AddIns\ServiceTest\BasicActivities\toolbox_code_activity.png";
             _flow.EndActivity3.Name = @"End";
-            VTDPropertyInfoBase pi63 = new VTDPropertyInfoBase("XMLResponse","/*[local-name(.)='CreatedOrderParams'][1]/*[local-name(.)='OrderNumber'][1]");
-            VTDBaseGetter binding_getter32 = new VTDXPathGetter(pi63,XmlTypeCode.UnsignedByte);
-            VTDPropertyInfoBase pi64 = new VTDPropertyInfoBase("ExecutionOutputParameters","/*[local-name(.)='Arguments'][1]/*[local-name(.)='OrderNo'][1]");
-            VTDBaseSetter binding_setter32 = new VTDXPathSetter(pi64,XmlTypeCode.String);
-            binding_setter32 = new StringFormaterDecorator(binding_setter32,"{Step.ResponseXmlBody.RESTActivityV24.OrderNumber}");
-            bind_dir32 = new BindDirection(_flow.RESTActivityV24,binding_getter32,binding_setter32,BindTargetType.ToInProperty);
-            _flow.EndActivity3.InDirections.Add(bind_dir32);
+            VTDPropertyInfoBase pi75 = new VTDPropertyInfoBase("XMLResponse","/*[local-name(.)='CreatedOrderParams'][1]/*[local-name(.)='OrderNumber'][1]");
+            VTDBaseGetter binding_getter38 = new VTDXPathGetter(pi75,XmlTypeCode.UnsignedByte);
+            VTDPropertyInfoBase pi76 = new VTDPropertyInfoBase("ExecutionOutputParameters","/*[local-name(.)='Arguments'][1]/*[local-name(.)='OrderNo'][1]");
+            VTDBaseSetter binding_setter38 = new VTDXPathSetter(pi76,XmlTypeCode.Int);
+            bind_dir38 = new BindDirection(_flow.RESTActivityV24,binding_getter38,binding_setter38,BindTargetType.ToInProperty);
+            _flow.EndActivity3.InDirections.Add(bind_dir38);
             this.Activities.Add (_flow.EndActivity3);
             _flow.Sequence5.Comment = @"";
             _flow.Sequence5.IconPath = @"";
@@ -203,12 +202,12 @@
 @"<RequestMultipartInfo><Type>Related</Type></RequestMultipartInfo>");
             _flow.RESTActivityV24.RequestMultipartInfoXml = RESTActivityV24_RequestMultipartInfoXml_Document;
             _flow.RESTActivityV24.Multipart=false;
-            VTDPropertyInfoBase pi65 = new VTDPropertyInfoBase("ExecutionInputParameters","/*[local-name(.)='Arguments'][1]/*[local-name(.)='FlightNo'][1]");
-            VTDBaseGetter binding_getter33 = new VTDXPathGetter(pi65,XmlTypeCode.Int);
-            VTDPropertyInfoBase pi66 = new VTDPropertyInfoBase("XMLBody","/*[local-name(.)='FlightOrderDetails'][1]/*[local-name(.)='FlightNumber'][1]");
-            VTDBaseSetter binding_setter33 = new VTDXPathSetter(pi66,XmlTypeCode.UnsignedShort);
-            bind_dir33 = new BindDirection(_flow.StartActivity1,binding_getter33,binding_setter33,BindTargetType.ToInProperty);
-            _flow.RESTActivityV24.InDirections.Add(bind_dir33);
+            VTDPropertyInfoBase pi77 = new VTDPropertyInfoBase("ExecutionInputParameters","/*[local-name(.)='Arguments'][1]/*[local-name(.)='FlightNo'][1]");
+            VTDBaseGetter binding_getter39 = new VTDXPathGetter(pi77,XmlTypeCode.Int);
+            VTDPropertyInfoBase pi78 = new VTDPropertyInfoBase("XMLBody","/*[local-name(.)='FlightOrderDetails'][1]/*[local-name(.)='FlightNumber'][1]");
+            VTDBaseSetter binding_setter39 = new VTDXPathSetter(pi78,XmlTypeCode.UnsignedShort);
+            bind_dir39 = new BindDirection(_flow.StartActivity1,binding_getter39,binding_setter39,BindTargetType.ToInProperty);
+            _flow.RESTActivityV24.InDirections.Add(bind_dir39);
             XmlDocument RESTActivityV24_ExpectedResponseXmlBody_Document = new XmlDocument();
             RESTActivityV24_ExpectedResponseXmlBody_Document.PreserveWhitespace = true;
             RESTActivityV24_ExpectedResponseXmlBody_Document.LoadXml(

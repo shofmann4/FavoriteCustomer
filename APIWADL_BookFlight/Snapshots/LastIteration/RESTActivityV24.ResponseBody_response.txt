@@ -1,1 +1,1 @@
-<string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">This flight does not depart on this date.</string>
+<CreatedOrderParams xmlns="HP.SOAQ.SampleApp" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><OrderNumber>101</OrderNumber><TotalPrice>4712.4</TotalPrice></CreatedOrderParams>
